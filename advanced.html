@@ -3,18 +3,51 @@
     <head>
         <title>Advanced HTML Notes</title>
         <meta charset="UTF-8">
+        <style>
+            /* Cascading Style Sheets - What makes it look pretty
+            1. Selector
+            2. Declaration
+                a. Property
+                b. Value
+            */
+            body{
+                color:#7f7f7f;
+                background-color:rgb(0, 0, 0);
+            }
+            h1{
+                color:azure;
+                text-decoration:underline;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+                width: 75%;
+                text-align: center;
+            }
+            #even{
+                color:antiquewhite;
+            }
+            .numbered{
+                font-size:20px;
+            }
+            #timp{
+                width:50%;
+            }
+            #snow{
+                width: 300px;
+                border: solid 2px orange;
+            }
+        </style>
     </head>
     <body>
         <h1>Advanced HTML Notes</h1>
         <h3>Lists:</h3>
-        <ol type="i">
+        <ol type="i" class="numbered">
             <li>This is the first thing</li>
-            <li>This is the second</li>
+            <li id="even">This is the second</li>
             <li>This is third</li>
         </ol>
         <ul>
             <li><a href="https://commons.wikimedia.org/wiki/File:Honeycrisp-Apple.jpg" target="_blank">Apple</a></li>
-            <li>Bannana</li>
+            <li id="even">Bannana</li>
             <li>Kiwi</li>
         </ul>
         <dl>
@@ -27,9 +60,9 @@
             <dd>New Years</dd>
         </dl>
         <h3>Attributes:</h3>
-        <img src="https://globalsummitguide.com/wp-content/uploads/2026/07/AdobeStock_1146206325-scaled.jpeg" alt="Mount Timp" width="200px">
+        <img src="https://globalsummitguide.com/wp-content/uploads/2026/07/AdobeStock_1146206325-scaled.jpeg" alt="Mount Timp" id="timp">
         <div>
-        <img src="mt_timp.jpg" alt="Snowy Timp" width="200px">
+        <img src="mt_timp.jpg" alt="Snowy Timp" id="snow">
         <p>Image from <a href="https://www.flickr.com/photos/stripeyanne/422744753" target="_blank">Flickr</a></p>
         </div>
     </body>
