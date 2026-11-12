@@ -8,7 +8,7 @@
                 padding: 20px;
                 margin: 25px;
             }
-            #box{
+            #box, #boxTwo{
                 width: 50px;
                 height: 50px;
                 background-color: #7f7f7f;
@@ -30,10 +30,10 @@
     <body>
         <h1>Alignment Notes</h1>
         <div id="box-wrapper">
-            <div id="box">
+            <div id="box" onmouseover="dissapear()" onmouseout="appear()">
                 <p>Box 1</p>
             </div>
-            <div id="box">
+            <div id="boxTwo">
                 <p>Box 2</p>
             </div>
             <div id="box">
@@ -57,6 +57,31 @@
                 <p>Box 4</p>    
             </div>
         </div>
-        <button>Click Me</button>
+        <input type="color" id="colorPicker">
+        <button onClick="color()">Click Me</button>
+        <br>
+        <button id="showMore" onclick="show()">Show More</button>
+        <script>
+            function color(){
+                let newColor = document.getElementById("colorPicker").value
+                document.getElementById("box").style.backgroundColor = newColor
+            }
+            function dissapear(){
+                document.getElementById("boxTwo").style.display = 'none'
+            }
+            function appear(){
+                document.getElementById("boxTwo").style.display = 'block'
+            }
+            function show(){
+                let element = document.getElementById("flex-wrapper")
+                if (element.style.display == "flex"){
+                    element.style.display = "none"
+                    document.getElementById("showMore").innerHTML = "Show More"
+                }else{
+                    element.style.display = "flex"
+                    document.getElementById("showMore").innerHTML = "Show Less"
+                }
+            }
+        </script>
     </body>
 </html>
