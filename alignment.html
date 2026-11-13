@@ -25,10 +25,14 @@
                 justify-content: space-between;
                 align-items: center;
             }
+            #apple{
+                width: 150px;
+            }
         </style>
     </head>
     <body>
         <h1>Alignment Notes</h1>
+        <img src="https://t4.ftcdn.net/jpg/00/59/96/75/360_F_59967553_9g2bvhTZf18zCmEVWcKigEoevGzFqXzq.jpg" alt="apple" id="apple" onmouseout="changeImage()">
         <div id="box-wrapper">
             <div id="box" onmouseover="dissapear()" onmouseout="appear()">
                 <p>Box 1</p>
@@ -62,6 +66,15 @@
         <br>
         <button id="showMore" onclick="show()">Show More</button>
         <script>
+            let images = ["https://media.istockphoto.com/id/2184346751/photo/gala-apple-composition-on-wooden-table.jpg?s=612x612&w=0&k=20&c=3IOuFp833fvq5B283Rhf2pNw7hJUc45SlLMwTN5oBt0=", "https://t3.ftcdn.net/jpg/01/92/55/78/360_F_192557838_VdAYRdjHxX56QjqBlgo6nOEC1VWTDKOZ.jpg", "https://media.istockphoto.com/id/187420397/photo/red-apples.jpg?s=612x612&w=0&k=20&c=2gP5VblBy8wBB1aMuB9godHm_QYuKOdvb1U_f9h4Kjk=", "https://t4.ftcdn.net/jpg/00/59/96/75/360_F_59967553_9g2bvhTZf18zCmEVWcKigEoevGzFqXzq.jpg"]
+            let current = 0
+            function changeImage(){
+                current += 1
+                if (current > 3){
+                    current = 0
+                }
+                document.getElementById("apple").src = images[current]
+            }
             function color(){
                 let newColor = document.getElementById("colorPicker").value
                 document.getElementById("box").style.backgroundColor = newColor

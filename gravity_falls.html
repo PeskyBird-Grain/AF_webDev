@@ -41,6 +41,10 @@
                 color:rgb(100, 16, 16);
                 font-family: "Redaction 100", sans-serif;
             }
+            #bill{
+                display: none;
+                font-family: "Redaction 100", sans-serif;
+            }
         </style>
     </head>
     <body>
@@ -103,14 +107,40 @@
         <div class="element">
             <h2>Episode 1: Tourist Trapped</h2>
             <a href="https://gravityfalls.fandom.com/wiki/Tourist_Trapped" target="_blank"><img src="S1e1_Book_3_eyepiece_2.png" alt="Tourist Trapped" id="tourist"></a>
-            <p>Image from Gravity Falls Wiki - Fandom and belong to Disney Television Animation</p>
+            <p>Image from Gravity Falls Wiki - Fandom and belongs to Disney Television Animation</p>
             <p>The first episode begins with twins Dipper and Mabel Pines riding in a golf cart away from a large shadowy monster, as Dipper narrates. He says that their parents sent them away for the summer to Gravity Falls, Oregon, to live with their great uncle, or “Grunkle” Stan in the Mystery Shack, which is a tourist trap. Dipper finds a mysterious journal hidden in the woods, where he finds the truth about Gravity Falls’ supernatural side. Meanwhile, Mable finds a new boyfriend, Norman, but Dipper suspects that Norman’s a zombie. While searching for evidence, Dipper sees Norman’s hand fall off. Mabel goes on a date with Norman, and Dipper commandeers a golf cart to find and stop Norman. Norman then reveals himself to be a bunch of gnomes, which want to marry Mabel and make her their queen; they kidnap her when she refuses. Dipper arrives in time to save her and they run away in the golf cart, but the gnomes, who had assembled into a giant monster, were close behind. When they return to the Mystery Shack, Mabel agrees to marry the gnomes, but then sucks the leader into a leaf blower, and sends him flying into the pile of gnomes. The gnomes scatter and the Pines twins hug.</p>
         </div>
         <div class="element">
             <h2>Episode 2: The Legend of the Gobblewonker</h2>
             <a href="https://gravityfalls.fandom.com/wiki/The_Legend_of_the_Gobblewonker" target="_blank"><img src="S1e2_dipper_and_mabel_on_boat.png" alt="The Legend of the Gobblewonker" id="gobblewonker"></a>
-            <p>Image from Gravity Falls Wiki - Fandom and belong to Disney Television Animation</p>
+            <p>Image from Gravity Falls Wiki - Fandom and belongs to Disney Television Animation</p>
             <p>The second episode starts with Grunckle Stan bringing the kids on a fishing trip, which they aren’t too happy about. When they get there, however, Old Man McGucket runs onto the dock raving about a monster called the Gobblewonker. Dipper sees this as a chance to get money, remembering a monster photo contest he read about in the paper. They abandon their Grunkle Stan to chase after the monster with Soos, an employee at the Mystery Shack. As they search for the monster, Stan tries desperately to find a friend to fish with. When they find the monster, it chases them into a cave, where it gets stuck. As Dipper takes pictures, the monster’s eyes stop glowing and it breaks down, revealing itself to be a robot. It turns out to have been built and operated by Old Man McGucket, who tells the kids the lengths old-timers go through to have quality time with those they love. Dipper and Mabel feel bad, and join Stan for the rest of the time at the lake.</p>
         </div>
+        <div id="bill">
+            <h2>The Book of Bill</h2>
+            <a href="https://gravityfalls.fandom.com/wiki/The_Book_of_Bill" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/3/3e/The_Book_of_Bill_Cover.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="The Book of Bill" id="bill-book"></a>
+            <p>Image from Wikipedia/Villains Wiki - Fandom and belongs to Disney Television Animation</p>
+            <p></p>
+        </div>
+        <button id="showMore" onclick="show()">The Book of Bill</button>
+        <script>
+            let images = ["https://upload.wikimedia.org/wikipedia/en/3/3e/The_Book_of_Bill_Cover.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original", "https://static.wikia.nocookie.net/villains/images/e/e4/Img_3336.webp/revision/latest/scale-to-width/360?cb=20250413115548"]
+            let current = 0
+            function changeImage(){
+                current += 1
+                if (current > 2){
+                    current = 0
+                }
+                document.getElementById("apple").src = images[current]
+            }
+            function show(){
+                let element = document.getElementById("bill")
+                if (element.style.display == "block"){
+                    element.style.display = "none"
+                }else{
+                    element.style.display = "block"
+                }
+            }
+        </script>
     </body>
 </html>
