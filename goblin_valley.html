@@ -7,17 +7,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
         <style>
-            #day{
+            body{
+                font-family: "Trade Winds", system-ui;
+                background-color: darkkhaki;
+            }
+            #top{
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 5px;
             }
-            #top{
-                width: 100%;
+            #night{
+                color: aqua;
+                background-color: rgb(10, 0, 60);
+                border-radius: 5px;
+                padding: 5px;
+                display: none;
             }
-            body{
-                font-family: "Trade Winds", system-ui;
-                background-color: darkkhaki;
+            #nighttime{
+                border-radius: 10px;
+            }
+            #daytime{
+                width: 100%;
             }
             #valley{
                 background-color:wheat;
@@ -28,27 +38,46 @@
             }
         </style>
     </head>
-    <body>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Goblin_Valley_State_Park_-_aerial_view_of_hoodoos_2023-09-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Hoodoos" id="top">
+    <body id="body">
         <div id="day">
-            <div id="valley">
-                <h1>Goblin Valley</h1>
-                <p>Goblin Valley is a State park located in Emery County, Utah. It is characterized by it's many hoodoos, which form when soft sandstone is eroded to create a rocky pillar. These create an otherworldly landscape. It is also a great place for hiking, camping, and overall exploration.</p>
-            </div>
-            <div id="valley">
-                <h2>Reasons to go:</h2>
-                <ul>
-                    <li>You are free to explore, and aren't stuck on one specific path.</li>
-                    <li>The landscape is fascinating and unique.</li>
-                    <li>It's a designated International Dark Sky Park.</li>
-                    <li>It's fun!</li>
-                </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Goblin_Valley_State_Park_-_aerial_view_of_hoodoos_2023-09-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Aerial View" id="daytime">
+            <div id="top">
+                <div id="valley">
+                    <h1>Goblin Valley</h1>
+                    <p>Goblin Valley is a State park located in Emery County, Utah. It is characterized by it's many hoodoos, which form when soft sandstone is eroded to create a rocky pillar. These create an otherworldly landscape. It is also a great place for hiking, camping, and overall exploration.</p>
+                </div>
+                <div id="valley">
+                    <h2>Reasons to go:</h2>
+                    <ul>
+                        <li>You are free to explore, and aren't stuck on one specific path.</li>
+                        <li>The landscape is fascinating and unique.</li>
+                        <li>It's a designated International Dark Sky Park.</li>
+                        <li>It's fun!</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div>
-            <img src="goblin_valley_at_night.jpg" alt="Night" id="night">
+        <div id="night">
+            <img src="goblin_valley_at_night.jpg" alt="Night" id="nighttime">
             <h1>Goblin Valley at Night</h1>
             <p></p>
         </div>
+        <button id="showMore" onclick="show()">Goblin Valley at Night</button>
+        
     </body>
+    <script>
+                let night = document.getElementById("night")
+                let day = document.getElementById("day")
+            function show(){
+                if (night.style.display == "block"){
+                    night.style.display = "none"
+                    day.style.display = "block"
+                    document.getElementById("showMore").innerHTML = "Goblin Valley at Night"
+                }else{
+                    night.style.display = "block"
+                    day.style.display = "none"
+                    document.getElementById("showMore").innerHTML = "Goblin Valley During the Day"
+                }
+            }
+        </script>
 </html>
